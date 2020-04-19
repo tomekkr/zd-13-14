@@ -1,32 +1,23 @@
-import java.util.Scanner;
-
 class Company {
-    public static void main(String[] args) {
-        Employee[] employees = new Employee[2];
+    private final int employeesLimit = 2;
+    private static int employeeIndex = 0;
 
-        Scanner sc = new Scanner(System.in);
+    private Employee[] employees = new Employee[employeesLimit];
 
-        for (int i = 0; i < employees.length; i++) {
-            System.out.println("Pracownik nr " + (i + 1));
-            System.out.print("Podaj imię: ");
-            String firstName = sc.nextLine();
-            System.out.print("Podaj nazwisko: ");
-            String lastName = sc.nextLine();
-            System.out.print("Podaj pensję: ");
-            double salary = sc.nextDouble();
-            sc.nextLine();
-            System.out.println("");
-            employees[i] = new Employee(firstName, lastName, salary);
-        }
-        sc.close();
+    void add(Employee emp) {
+        employees[employeeIndex] = emp;
+        employeeIndex++;
+    }
 
-        double totalSalary = 0;
+    public Employee get(int index) {
+        return employees[index];
+    }
 
-        for (Employee employee : employees) {
-            totalSalary += employee.getSalary();
-        }
+    public double getEmployeesLength() {
+        return employees.length;
+    }
 
-        System.out.println("Suma pensji pracowników: " + totalSalary);
-
+    public Employee[] getEmployees() {
+        return employees;
     }
 }
