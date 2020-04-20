@@ -1,12 +1,12 @@
 class Company {
-    private final int employeesLimit = 2;
-    private static int employeeIndex = 0;
+    private final int EMPLOYEES_LIMIT = 2;
+    private static int EMPLOYEE_INDEX = 0;
 
-    private Employee[] employees = new Employee[employeesLimit];
+    private Employee[] employees = new Employee[EMPLOYEES_LIMIT];
 
     void add(Employee emp) {
-        employees[employeeIndex] = emp;
-        employeeIndex++;
+        employees[EMPLOYEE_INDEX] = emp;
+        EMPLOYEE_INDEX++;
     }
 
     public Employee get(int index) {

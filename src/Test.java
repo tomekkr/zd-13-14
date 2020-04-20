@@ -1,25 +1,13 @@
-import java.util.Scanner;
-
 class Test {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
         Company company = new Company();
+        EmployeeFactory employeeFactory = new EmployeeFactory();
 
         for (int i = 0; i < company.getEmployeesLength(); i++) {
             System.out.println("Pracownik nr " + (i + 1));
-            System.out.print("Podaj imię: ");
-            String firstName = sc.nextLine();
-            System.out.print("Podaj nazwisko: ");
-            String lastName = sc.nextLine();
-            System.out.print("Podaj pensję: ");
-            double salary = sc.nextDouble();
-            sc.nextLine();
-            System.out.println("");
-            Employee employee = new Employee(firstName, lastName, salary);
+            Employee employee = employeeFactory.createEmployee();
             company.add(employee);
         }
-        sc.close();
 
         double totalSalary = 0;
 
