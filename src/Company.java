@@ -1,6 +1,6 @@
 class Company {
     private final int EMPLOYEES_LIMIT = 2;
-    private static int EMPLOYEE_INDEX = 0;
+    private int EMPLOYEE_INDEX = 0;
 
     private Employee[] employees = new Employee[EMPLOYEES_LIMIT];
 
