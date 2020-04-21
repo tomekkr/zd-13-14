@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
 class EmployeeFactory {
-    private Scanner sc = new Scanner(System.in);
+
 
     public Employee createEmployee() {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Podaj imię: ");
         String firstName = sc.nextLine();
         System.out.print("Podaj nazwisko: ");
